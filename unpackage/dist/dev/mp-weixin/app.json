@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/music/music",
+    "pages/mine/mine"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#435257",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/img/tab/index.png",
+        "selectedIconPath": "static/img/tab/index_1.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/music/music",
+        "iconPath": "static/img/tab/music.png",
+        "selectedIconPath": "static/img/tab/music_1.png",
+        "text": "音乐角"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "static/img/tab/mine.png",
+        "selectedIconPath": "static/img/tab/mine.png",
+        "text": "我"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将用于当前城市的定位"
+    }
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap68.json"
+}

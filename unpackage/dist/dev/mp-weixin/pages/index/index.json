@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "命印",
+  "usingComponents": {
+    "ml-refresh": "/components/ml-refresh/ml-refresh"
+  }
+}
