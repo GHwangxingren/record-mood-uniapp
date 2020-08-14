@@ -1,19 +1,15 @@
 <template>
-	<view>
-		我的
-	</view>
+	<button @tap="goLogin">去登陆</button>
 </template>
 
 <script>
 	export default {
-		data() {
-			return {
-				
-			};
+		methods: {
+			goLogin() {
+				uni.navigateTo({
+					url: "../login/login"
+				})
+			}
 		}
 	}
 </script>
-
-<style lang="scss">
-
-</style>

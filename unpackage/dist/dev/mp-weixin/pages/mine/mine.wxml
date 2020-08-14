@@ -1,1 +1,1 @@
-<view>我的</view>
+<button data-event-opts="{{[['tap',[['goLogin',['$event']]]]]}}" bindtap="__e">去登陆</button>

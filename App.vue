@@ -17,7 +17,5 @@
 	@import '@/style/colorui/icon.css';
 	@import '@/style/colorui/animation.css';
 	@import "@/style/variable.css";
-	@import "@/style/common.scss";
-
 	/*每个页面公共css */
 </style>

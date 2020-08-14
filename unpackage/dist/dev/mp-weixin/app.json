@@ -2,7 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/music/music",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/diary/detail",
+    "pages/login/login"
   ],
   "subPackages": [],
   "window": {
@@ -43,5 +45,5 @@
     }
   },
   "usingComponents": {},
-  "sitemapLocation": "sitemap68.json"
+  "sitemapLocation": "sitemap16.json"
 }

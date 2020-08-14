@@ -24,6 +24,26 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+.flex-center.data-v-6a4e45a4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+.img.data-v-6a4e45a4 {
+  width: 100%;
+  height: 100%;
+}
+.flex.data-v-6a4e45a4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
 .mix-refresh-content.data-v-6a4e45a4 {
   display: -webkit-box;
   display: -webkit-flex;

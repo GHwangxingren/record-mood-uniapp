@@ -1,6 +1,26 @@
 // 公共样式
+%flex-align-center {
+	display: flex;
+	align-items: center;
+}
+
+@mixin flex-box($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
 .flex-center {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.img {
+	width: 100%;
+	height: 100%;
+}
+
+.flex{
+	display: flex;
 }

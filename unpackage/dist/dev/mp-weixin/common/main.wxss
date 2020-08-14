@@ -5985,6 +5985,8 @@ page {
 	--black-color: #000;
 	--main-color: #435257;
 	--active-color: #36b39b;
+	--999-color: #999;
+	--666-color: #666;
 	
 	/* 全局font-weight */
 	--font-weight: normal;
@@ -6004,20 +6006,6 @@ page {
 	--font-size-large: 16px;
 	--font-size-larger: 18px;
 	--font-size-largerx: 32px; */
-}
-
-/* 公共样式
- */
-.flex-center {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	        align-items: center;
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	        justify-content: center;
 }
 
 /*每个页面公共css */

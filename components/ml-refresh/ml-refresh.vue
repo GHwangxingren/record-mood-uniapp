@@ -128,12 +128,10 @@
 			},
 			//结束下拉刷新
 			endPulldownRefresh(){
-				let that = this
-				setTimeout(function(){
-					that.refreshing = false;
-					that.pageDeviation = uni.upx2px(0);
-				},1200)
-				//this.$emit('setEnableScroll', true);
+				let that = this;
+				that.refreshing = false;
+				that.pageDeviation = uni.upx2px(0);
+				// this.$emit('setEnableScroll', true);
 			},
 		}
 	}

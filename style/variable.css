@@ -3,6 +3,8 @@ page {
 	--black-color: #000;
 	--main-color: #435257;
 	--active-color: #36b39b;
+	--999-color: #999;
+	--666-color: #666;
 	
 	/* 全局font-weight */
 	--font-weight: normal;
