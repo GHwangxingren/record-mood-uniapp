@@ -4,7 +4,8 @@
     "pages/music/music",
     "pages/mine/mine",
     "pages/diary/detail",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/publish/publish"
   ],
   "subPackages": [],
   "window": {
@@ -44,6 +45,5 @@
       "desc": "您的位置信息将用于当前城市的定位"
     }
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap16.json"
+  "usingComponents": {}
 }

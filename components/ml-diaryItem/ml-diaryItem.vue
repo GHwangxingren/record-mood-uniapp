@@ -42,6 +42,7 @@
 
 <script>
 	import { preview } from "@/utils/common.js";
+	import { mapGetters, mapMutations } from "vuex";
 	
 	export default {
 		props: {
@@ -55,15 +56,31 @@
 				item: this.obj
 			};
 		},
+		computed: {
+			...mapGetters(["token"])
+		},
 		methods: {
+			...mapMutations({
+				setLoginTip: "user/setLoginTip"
+			}),
 			// 去详情
 			diaryDetail(id) {
+				if (!this.token) {
+					this.setLoginTip(true);
+					return;
+				}
+				
 				uni.navigateTo({
 					url: "`pages/diary/detailid=${id}`"
 				})
 			},
 			// 点赞
 			handleLike() {
+				if (!this.token) {
+					this.setLoginTip(true);
+					return;
+				}
+				
 				if (this.item.isLike) {
 					this.item.likeNum--;
 				} else {

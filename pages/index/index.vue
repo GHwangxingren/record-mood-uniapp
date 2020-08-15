@@ -10,6 +10,7 @@
 				{{ item.title }}
 			</view>
 		</view>
+		<!-- 中间主体内容列表 -->
 		<ml-refresh ref="pullDownRefresh" @refresh="onPulldownReresh">
 			<view class="content-wrap">
 				<view v-if="activeTab === 0">
@@ -25,11 +26,14 @@
 				<ml-loadMore :status="loadMoreStatus" />
 			</view>
 		</ml-refresh>
+		<!-- 右下角悬浮按钮 -->
+		<ml-hoverBtn :bottom="140" :right="40" :btnList="hoverBtn" @click="handleHoverBtn"></ml-hoverBtn>
+		<ml-loginTip></ml-loginTip>
 	</view>
 </template>
 
 <script>
-	import { mapGetters } from "vuex";
+	import { mapGetters, mapMutations } from "vuex";
 	
 	export default {
 		data() {
@@ -43,6 +47,20 @@
 						title: '聚集岛'
 					}
 				],
+				hoverBtn: [
+					{
+						bgColor: '#16C2C2',
+						text: '发布',
+						fontSize: 28,
+						color: '#fff'
+					},
+					{
+						bgColor: '#37b59d',
+						text: '分享',
+						fontSize: 28,
+						color: '#fff'
+					}
+				],
 				cardList: [],
 				rightList: [],
 				loadMoreStatus: 1, //0加载前，1加载中，2没有更多了
@@ -51,7 +69,8 @@
 		computed: {
 			...mapGetters({
 				sCardList: "cardList",
-				sRightList: "rightList"
+				sRightList: "rightList",
+				token: "token"
 			})
 		},
 		onLoad() {
@@ -62,6 +81,26 @@
 			this.loadData("add");
 		},
 		methods: {
+			...mapMutations({
+				setLoginTip: "user/setLoginTip"
+			}),
+			handleHoverBtn(e) {
+				let index = e.index;
+					switch (index) {
+						case 0:
+							if(!this.token) {
+								this.setLoginTip(true);
+								return;
+							}
+							uni.navigateTo({
+								url: '../publish/publish'
+							});
+							break;
+						case 1:
+							console.log("分享");
+							break;
+					}
+			},
 			handleTab(index) {
 				this.activeTab = index;
 			},
