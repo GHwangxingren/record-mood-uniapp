@@ -5,7 +5,7 @@
 				<image class="head-bg" src="http://shopro.7wpp.com/imgs/nologin_bg.png" mode=""></image>
 				<view class="detail">
 					<view class="title1">您还没有登录</view>
-					<view class="title2">登录即刻开启品质生活</view>
+					<view class="title2">登录即刻开启品质体验</view>
 				</view>
 				<view class="btn-box y-f">
 					<button class="cu-btn login-btn" @tap="onLogin">立即登录</button>

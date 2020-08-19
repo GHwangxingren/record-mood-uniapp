@@ -1,1 +1,1 @@
-<view>音乐</view>
+<view class="music-container"><view class="music-img flex-center"><image class="img" src="https://6d61-matchbox-79a395-1302390714.tcb.qcloud.la/matchbox/lonely.jpg" mode="widthFix"></image></view></view>
