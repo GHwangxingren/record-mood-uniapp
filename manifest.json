@@ -69,7 +69,8 @@
             "scope.userLocation" : {
                 "desc" : "您的位置信息将用于当前城市的定位"
             }
-        }
+        },
+				"requiredBackgroundModes": ["audio"]
     },
     "mp-alipay" : {
         "usingComponents" : true

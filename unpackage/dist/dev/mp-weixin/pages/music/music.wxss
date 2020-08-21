@@ -24,7 +24,7 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.flex-center {
+.flex-center.data-v-dc03475c {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -35,22 +35,107 @@
   -webkit-justify-content: center;
           justify-content: center;
 }
-.img {
+.img.data-v-dc03475c {
   width: 100%;
   height: 100%;
 }
-.flex {
+.flex.data-v-dc03475c {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
 }
-.music-container .music-img {
+.music-container.data-v-dc03475c {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+}
+.music-container .music-img.data-v-dc03475c {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
   width: 100%;
-  max-height: 800rpx;
   overflow: hidden;
 }
-.music-container .music-img .img {
+.music-container .music-img .img.data-v-dc03475c {
   width: 100%;
-  height: 800rpx;
+  height: 100%;
+}
+.music-container .audio-controller.data-v-dc03475c {
+  padding: 50rpx 0;
+  height: 200rpx;
+  width: 100%;
+  background-color: var(--white-color);
+}
+.music-container .audio-controller .top.data-v-dc03475c {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.music-container .audio-controller .top .title.data-v-dc03475c {
+  width: 57%;
+  margin-left: 3%;
+  font-size: 30rpx;
+}
+.music-container .audio-controller .top .controller-icon.data-v-dc03475c {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-around;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  width: 40%;
+}
+.music-container .audio-controller .top .controller-icon image.data-v-dc03475c {
+  display: inline-block;
+  height: 30rpx;
+  width: 30rpx;
+}
+.music-container .audio-controller .bottom.data-v-dc03475c {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  margin: 25rpx 3% 0 5%;
+}
+.music-container .audio-controller .bottom .progress-bar.data-v-dc03475c {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  margin-right: 30rpx;
+}
+.music-container .audio-controller .bottom .progress-bar .audio-slider.data-v-dc03475c {
+  margin: 0;
+}
+.music-container .audio-controller .bottom .time.data-v-dc03475c {
+  color: #808080;
+  font-size: 28rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.music-container .audio-controller .bottom .time image.data-v-dc03475c {
+  display: block;
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 30rpx;
+  margin-top: 5rpx;
 }
 
