@@ -53,17 +53,17 @@
 				playList: [
 					{
 						id: 1,
-						src: 'https://m10.music.126.net/20200822181252/88dde0e7eb92883d907897724b452517/ymusic/obj/w5zDlMODwrDDiGjCn8Ky/2976632872/8d33/2038/21fc/fb3bac789740ff91accaf2ca118fc75c.mp3',
-						coverImg: "https://img9.51tietu.net/pic/2019-091200/vgkpidei2tjvgkpidei2tj.jpg",
-						name: "让一切随风",
-						album: "听涛",
-						singer: "钟镇涛",
+						src: 'http://music.163.com/song/media/outer/url?id=69827.mp3',
+						coverImg: "https://xing-picture.oss-cn-beijing.aliyuncs.com/music1.jpg",  
+						name: "太多",
+						album: "就让你走",
+						singer: "陈冠蒲",
 						status: 0
 					},
 					{
 						id: 2,
-						src: "https://m10.music.126.net/20200822181840/c4bb176422d3e0a78d40165e62329742/ymusic/7d85/1be7/6a7f/18a283bf6987634d2009d503504305a9.mp3",
-						coverImg: "https://img9.51tietu.net/pic/2019-091200/euzekmi5m23euzekmi5m23.jpg",
+						src: "http://music.163.com/song/media/outer/url?id=1300669795.mp3",
+						coverImg: "https://xing-picture.oss-cn-beijing.aliyuncs.com/music2.jpg",
 						name: "南常",
 						album: "小海在路上",
 						singer: "小海",
@@ -71,24 +71,24 @@
 					},
 					{
 						id: 3,
-						src: "https://m10.music.126.net/20200822181940/ff2f3c91cfb65a38f47db8506562b159/ymusic/87ec/046a/e21c/9c4eeccc6d868b99bb9a648ab586f641.mp3",
-						coverImg: "https://img9.51tietu.net/pic/2019-091200/143tt0ta4sr143tt0ta4sr.jpg",
-						name: "Sleeping In(Acoustic)",
-						album: "Sleeping In(Acoustic)",
-						singer: "Phil Good",
+						src: "http://music.163.com/song/media/outer/url?id=1346104327.mp3",
+						coverImg: "https://xing-picture.oss-cn-beijing.aliyuncs.com/music3.jpg",
+						name: "多想在平庸的生活拥抱你",
+						album: "我曾",
+						singer: "隔壁老樊",
 						status: 0
 					},
 					{
 						id: 4,
-						src: "https://m10.music.126.net/20200822182011/9f9f1ff4f532cedfbaa92ce42fa035c8/ymusic/015a/035a/5158/60c5eb0330401d7ded24f22dea9195eb.mp3",
-						coverImg: "https://img9.51tietu.net/pic/2019-091200/ff1vqwm3q33ff1vqwm3q33.jpg",
+						src: "http://music.163.com/song/media/outer/url?id=1376873330.mp3",
+						coverImg: "https://xing-picture.oss-cn-beijing.aliyuncs.com/music4.jpg",
 						name: "吹梦到西洲",
 						album: "吹梦到西洲",
 						singer: "恋恋故人难/黄私扶/妖扬",
 						status: 0
 					}
 				],
-				backImg: "https://img9.51tietu.net/pic/2019-091200/vgkpidei2tjvgkpidei2tj.jpg",
+				backImg: "https://xing-picture.oss-cn-beijing.aliyuncs.com/music1.jpg",
 				paused: false,
 				recycled: false,
 				currentTime: 0,
@@ -122,7 +122,8 @@
 				innerAudioContext.onWaiting(() => {
 					this.paused = true;
 					uni.showLoading({
-						title: "正在加载"
+						title: "正在加载",
+						mask: true
 					});
 				});
 				innerAudioContext.onPause(() => {
@@ -237,8 +238,9 @@
 				this.recycled = !this.recycled;
 				if (this.recycled) {
 					uni.showToast({
-						icon: 'none',
-						title: '开启循环'
+						icon: "none",
+						title: "开启循环",
+						mask: true
 					});
 				}
 			},
