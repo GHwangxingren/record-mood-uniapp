@@ -44,6 +44,11 @@
   display: -webkit-flex;
   display: flex;
 }
+.text-overflow.data-v-6a4e45a4 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .mix-refresh-content.data-v-6a4e45a4 {
   display: -webkit-box;
   display: -webkit-flex;

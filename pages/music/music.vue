@@ -175,11 +175,11 @@
 					// console.log(this.timeFormat(innerAudioContext.duration))
 				});
 				
-				this.backImg = this.playList[this.playing].coverImg;
-				innerAudioContext.src = this.playList[this.playing].src;
-				innerAudioContext.title = this.playList[this.playing].name;
-				innerAudioContext.coverImgUrl = this.playList[this.playing].coverImg;
-				innerAudioContext.singer = this.playList[this.playing].name;
+				// this.backImg = this.playList[this.playing].coverImg;
+				// innerAudioContext.src = this.playList[this.playing].src;
+				// innerAudioContext.title = this.playList[this.playing].name;
+				// innerAudioContext.coverImgUrl = this.playList[this.playing].coverImg;
+				// innerAudioContext.singer = this.playList[this.playing].name;
 			},
 			sliderChange(e) {
 				this.currentTime = e.detail.value
@@ -189,43 +189,51 @@
 			lastSong() {
 				if (this.playing != 0) {
 					this.playing--;
-					innerAudioContext.src = this.playList[this.playing].src;
-					innerAudioContext.title = this.playList[this.playing].name;
 				} else {
 					this.playing = this.playList.length - 1;
-					innerAudioContext.src = this.playList[this.playing].src;
-					innerAudioContext.title = this.playList[this.playing].name;
+				}
+				
+				if (!innerAudioContext.src) {
+					this.initAudio()
 				}
 				
 				this.$nextTick(() => {
 					this.getRollingTextWidth(".rolling-text", "textWidth");
 				})
-				this.backImg = this.playList[this.playing].coverImg;
+				this.changeSong();
 			},
 			nextSong() {
 				if (this.playing < this.playList.length - 1) {
 					this.playing++;
-					innerAudioContext.src = this.playList[this.playing].src;
-					innerAudioContext.title = this.playList[this.playing].name;
 				} else if (this.playing == this.playList.length - 1) {
 					this.playing = 0;
-					innerAudioContext.src = this.playList[this.playing].src;
-					innerAudioContext.title = this.playList[this.playing].name;
 					uni.pageScrollTo({
 						scrollTop: 0
 					});
-				}else{
+				} else {
 					console.log('do nothing ');
+				}
+				
+				if (!innerAudioContext.src) {
+					this.initAudio()
 				}
 				
 				this.$nextTick(() => {
 					this.getRollingTextWidth(".rolling-text", "textWidth");
 				})
+				this.changeSong();
+			},
+			changeSong() {
 				this.backImg = this.playList[this.playing].coverImg;
+				innerAudioContext.src = this.playList[this.playing].src;
+				innerAudioContext.title = this.playList[this.playing].name;
+				innerAudioContext.coverImgUrl = this.playList[this.playing].coverImg;
+				innerAudioContext.singer = this.playList[this.playing].name;
 			},
 			play() {
 				if (!innerAudioContext.src) {
-					this.initAudio()
+					this.initAudio();
+					this.changeSong();
 				}
 				
 				innerAudioContext.play();

@@ -18,4 +18,7 @@
 	@import '@/style/colorui/animation.css';
 	@import "@/style/variable.css";
 	/*每个页面公共css */
+	page {
+		background-color: #f5f8f9;
+	}
 </style>

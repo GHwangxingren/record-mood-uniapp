@@ -44,6 +44,11 @@
   display: -webkit-flex;
   display: flex;
 }
+.text-overflow.data-v-23133c46 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .modal-box.data-v-23133c46 {
   width: 610rpx;
   border-radius: 20rpx;

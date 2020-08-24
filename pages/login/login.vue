@@ -31,7 +31,7 @@
 				<button class="other-list"  open-type="getUserInfo" @getuserinfo="loginqq">
 					<image class="img" src="../../static/img/login/ic-QQ@2x.png" mode="aspectFill"></image>
 				</button>
-				<button class="other-list" open-type="getUserInfo" @getUserInfo="loginWeixin">
+				<button class="other-list" open-type="getUserInfo" @getuserinfo="loginWeixin">
 					<image class="img" src="../../static/img/login/ic-weixin@2x.png" mode="aspectFill"></image>
 				</button>
 			</view>
@@ -40,6 +40,9 @@
 </template>
 
 <script>
+	import { createNamespacedHelpers, mapGetters } from "vuex";
+	const { mapMutations } = createNamespacedHelpers("user");
+	
 	export default {
 		data() {
 			return {
@@ -52,39 +55,17 @@
 				hideEyes: false
 			}
 		},
+		computed: {
+			...mapGetters(["currentPage"])
+		},
 		methods: {
+			...mapMutations(["setUserInfo", "setToken"]),
 			// 聚焦密码框，加载动画
 			passwordF_B() {
 				this.hideEyes = !this.hideEyes;
 			},
 			formSubmit(e) {
 				console.log(e.detail.value);
-			},
-			checkGuide() {
-				// 思路： 检测是否有启动缓存，如果没有，就是第一次启动，第一次启动就去 启动介绍页面
-				const launchFlag = uni.getStorageSync('launchFlag');
-				if (launchFlag) {
-					this.isLogin();
-				} else {
-					uni.redirectTo({
-						url: '/pages/guide/list'
-					});
-				}
-			},
-			isLogin() {
-				// 判断缓存中是否登录过，直接登录
-				try {
-					const value = uni.getStorageSync('access_token');
-					if (value) {
-						//有登录信息
-						console.log("已登录用户：", value);
-						uni.switchTab({
-							url: '/pages/index/index'
-						});
-					}
-				} catch (e) {
-
-				}
 			},
 			Timer() {},
 			getCode() {
@@ -127,23 +108,22 @@
 				}, 1000)
 			},
 			setTimer() {
-				let holdTime = 59,
-					_this = this;
-				_this.getCodeText = "重新获取(60)"
-				_this.Timer = setInterval(() => {
+				let holdTime = 59;
+				
+				this.getCodeText = "重新获取(60)"
+				this.Timer = setInterval(() => {
 					if (holdTime <= 0) {
-						_this.getCodeisWaiting = false;
-						_this.getCodeBtnColor = "#ffffff";
-						_this.getCodeText = "获取验证码"
-						clearInterval(_this.Timer);
+						this.getCodeisWaiting = false;
+						this.getCodeBtnColor = "#ffffff";
+						this.getCodeText = "获取验证码"
+						clearInterval(this.Timer);
 						return;
 					}
-					_this.getCodeText = "重新获取(" + holdTime + ")"
+					this.getCodeText = "重新获取(" + holdTime + ")"
 					holdTime--;
 				}, 1000)
 			},
 			doLogin() {
-				let _this = this;
 				uni.hideKeyboard()
 				//模板示例部分验证规则
 				// if(!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(this.phone))){ 
@@ -152,11 +132,11 @@
 				// } 
 
 				uni.request({
-					url: _this.websiteUrl + '/token/sys/login-sms',
+					url: this.websiteUrl + '/token/sys/login-sms',
 					data: {
-						'key': _this.key,
-						'code': _this.code,
-						'phone': _this.phone
+						'key': this.key,
+						'code': this.code,
+						'phone': this.phone
 					},
 					method: 'POST',
 					header: {
@@ -164,8 +144,8 @@
 					},
 					success: (res) => {
 						if (res.data.code == 200) {
-							_this.login(true, res.data.data, function() {
-								_this.getRongyToken();
+							this.login(true, res.data.data, function() {
+								this.getRongyToken();
 							});
 						} else {
 							uni.showToast({
@@ -179,32 +159,45 @@
 			},
 			//QQ登录
 			loginqq() {
+				console.log("qq登录");
 				let _this = this;
-				uni.login({
-					provider: 'qq',
-					success: function(loginRes) {
-						// 获取用户信息
-						uni.getUserInfo({
-							provider: 'qq',
-							success: function(infoRes) {
-								_this.other_login(loginRes, infoRes, 'qq')
-							}
-						});
-					}
-				});
+				// uni.login({
+				// 	provider: 'qq',
+				// 	success: function(loginRes) {
+				// 		// 获取用户信息
+				// 		uni.getUserInfo({
+				// 			provider: 'qq',
+				// 			success: function(infoRes) {
+				// 				_this.otherLogin(loginRes, infoRes, 'qq')
+				// 			}
+				// 		});
+				// 	}
+				// });
 			},
 			//微信登录
 			loginWeixin() {
 				uni.getUserInfo({
 					provider: 'weixin',
 					success: infoRes => {
-						console.log(infoRes, "infoRes")
-						// _this.other_login(loginRes, infoRes, 'wx');
+						if (infoRes.errMsg === "getUserInfo:ok") {
+							this.setUserInfo(infoRes.userInfo);
+							console.log(infoRes.userInfo)
+							this.setToken("imtokenADASDASDQADASDsdsdd");
+							uni.redirectTo({
+								url: this.currentPage,
+								fail: () => {
+									// 跳转失败兼容到tabbar
+									uni.switchTab({
+											url: this.currentPage
+									})
+								}
+							})
+						}
 					}
 				});
 			},
 			//授权登录
-			other_login(loginRes, infoRes, type) {
+			otherLogin(loginRes, infoRes, type) {
 				let _this = this;
 				let url;
 				let pram = {};

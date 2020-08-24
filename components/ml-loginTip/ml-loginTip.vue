@@ -17,8 +17,10 @@
 </template>
 
 <script>
+import { backToLogin } from "@/utils/common.js";
 import { createNamespacedHelpers, mapGetters } from 'vuex';
 const { mapMutations } = createNamespacedHelpers("user");
+
 export default {
 	name: 'shoproLoginModal',
 	components: {},
@@ -50,9 +52,7 @@ export default {
 		},
 		onLogin() {
 			this.showLogin = false;
-			uni.navigateTo({
-				url: "/pages/login/login"
-			});
+			backToLogin();
 		}
 	}
 };

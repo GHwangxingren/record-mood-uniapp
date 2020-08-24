@@ -44,6 +44,11 @@
   display: -webkit-flex;
   display: flex;
 }
+.text-overflow.data-v-57280228 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .home.data-v-57280228 {
   padding-top: 120rpx;
 }

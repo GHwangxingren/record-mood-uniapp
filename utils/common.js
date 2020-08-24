@@ -1,3 +1,4 @@
+import store from "@/store";
 // 公用预览图片
 const preview = (imgList, index) => {
 	return new Promise((resolve, reject) => {
@@ -15,6 +16,18 @@ const preview = (imgList, index) => {
 	})
 };
 
+// 未授权登录跳转到登录页，并记录当前地址
+const backToLogin = async () => {
+	// 存当前页面的地址
+	let e = getCurrentPages();
+	const currentPage = e[e.length - 1].route;
+	store.commit("route/setCurrentPage", `/${currentPage}`);
+	uni.navigateTo({
+		url: "/pages/login/login"
+	});
+};
+
 export {
-	preview
+	preview,
+	backToLogin
 }

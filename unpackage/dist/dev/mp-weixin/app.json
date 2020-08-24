@@ -48,6 +48,5 @@
   "requiredBackgroundModes": [
     "audio"
   ],
-  "usingComponents": {},
-  "sitemapLocation": "sitemap13.json"
+  "usingComponents": {}
 }

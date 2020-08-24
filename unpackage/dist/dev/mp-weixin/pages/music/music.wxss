@@ -44,6 +44,11 @@
   display: -webkit-flex;
   display: flex;
 }
+.text-overflow.data-v-dc03475c {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .music-container.data-v-dc03475c {
   display: -webkit-box;
   display: -webkit-flex;

@@ -52,6 +52,11 @@
   display: -webkit-flex;
   display: flex;
 }
+.text-overflow.data-v-ad61daf8 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .radius.data-v-ad61daf8 {
   border-radius: 16rpx;
 }

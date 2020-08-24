@@ -1,1 +1,1 @@
-<view class="diary-detail">详情页</view>
+<view class="detail-content"><view class="item-head"><view class="left-info"><view class="l-avator flex-center"><image class="img" src="../../static/img/login/ic-QQ@2x.png" mode></image></view><view class="l-nickname">奥特曼打小怪兽</view></view><view data-event-opts="{{[['tap',[['handleFllow',['$0'],['item.id']]]]]}}" class="{{['follow-btn flex-center']}}" bindtap="__e">{{true?"关注ta":"取消关注"}}</view></view></view>

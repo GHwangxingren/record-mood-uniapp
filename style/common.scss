@@ -4,6 +4,12 @@
 	align-items: center;
 }
 
+%text-overflow {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
 @mixin flex-box($justify: center, $align: center) {
   display: flex;
   justify-content: $justify;
@@ -23,4 +29,10 @@
 
 .flex{
 	display: flex;
+}
+
+.text-overflow {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
