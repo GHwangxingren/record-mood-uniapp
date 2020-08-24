@@ -41,10 +41,10 @@
 				activeTab: 0,
 				tabList: [
 					{
-						title: '漂流瓶'
+						title: '我们的轨迹'
 					},
 					{
-						title: '聚集岛'
+						title: '我的轨迹'
 					}
 				],
 				hoverBtn: [
@@ -115,16 +115,16 @@
 						this.cardList = this.cardList.concat({
 							id: 2,
 							time: '06-17',
-							avatarUrl: 'https://6d61-matchbox-79a395-1302390714.tcb.qcloud.la/matchbox/cat.jpg',
-							nickName: '小黄鸭',
-							title: '洛稚喜欢盛淮南谁也不知道',
+							avatarUrl: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2771555881,3104139652&fm=26&gp=0.jpg',
+							nickName: '小不点',
+							title: '如果一些事，没有过来，不必焦虑，过好现在的生活。何必因几年后，几月后或几天后的事而影响现在的心情。没那必要！',
 							follow: false,
 							isLike: false,
 							likeNum: '24',
 							commentNum: '0',
 							imgList: [
 								{
-									url: 'https://6d61-matchbox-79a395-1302390714.tcb.qcloud.la/matchbox/1e942ff08083714184afbf42eba0d87.jpg'
+									url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598241680559&di=4da875fc6fed2f0e3e35bbe19cf59b63&imgtype=0&src=http%3A%2F%2Fa4.att.hudong.com%2F46%2F82%2F01300542519536139979829457314.jpg'
 								}
 							]
 						});

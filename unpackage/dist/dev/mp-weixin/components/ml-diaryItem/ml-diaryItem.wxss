@@ -87,7 +87,7 @@
   overflow: hidden;
   width: 80rpx;
   height: 80rpx;
-  border-radius: 505;
+  border-radius: 50%;
 }
 .card-item .item-head .ih-left .head-name.data-v-ad61daf8 {
   padding-left: 40rpx;

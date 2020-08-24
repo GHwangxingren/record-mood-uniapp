@@ -122,7 +122,7 @@
 				overflow: hidden;
 				width: 80rpx;
 				height: 80rpx;
-				border-radius: 505;
+				border-radius: 50%;
 			}
 			
 			.head-name {
