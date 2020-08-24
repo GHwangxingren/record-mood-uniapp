@@ -174,12 +174,6 @@
 					// console.log(this.timeFormat(innerAudioContext.currentTime))
 					// console.log(this.timeFormat(innerAudioContext.duration))
 				});
-				
-				// this.backImg = this.playList[this.playing].coverImg;
-				// innerAudioContext.src = this.playList[this.playing].src;
-				// innerAudioContext.title = this.playList[this.playing].name;
-				// innerAudioContext.coverImgUrl = this.playList[this.playing].coverImg;
-				// innerAudioContext.singer = this.playList[this.playing].name;
 			},
 			sliderChange(e) {
 				this.currentTime = e.detail.value
