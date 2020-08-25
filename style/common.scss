@@ -36,3 +36,8 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
+
+.common-disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}

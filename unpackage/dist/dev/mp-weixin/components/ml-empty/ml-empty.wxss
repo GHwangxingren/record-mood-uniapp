@@ -24,7 +24,7 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.flex-center.data-v-57280228 {
+.flex-center.data-v-5f48fce4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -35,47 +35,59 @@
   -webkit-justify-content: center;
           justify-content: center;
 }
-.img.data-v-57280228 {
+.img.data-v-5f48fce4 {
   width: 100%;
   height: 100%;
 }
-.flex.data-v-57280228 {
+.flex.data-v-5f48fce4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
 }
-.text-overflow.data-v-57280228 {
+.text-overflow.data-v-5f48fce4 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.common-disabled.data-v-57280228 {
+.common-disabled.data-v-5f48fce4 {
   opacity: 0.5;
   cursor: not-allowed;
 }
-.home.data-v-57280228 {
-  padding-top: 120rpx;
-}
-.home .top-tab.data-v-57280228 {
+.empty-wrap.data-v-5f48fce4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  height: 120rpx;
-  position: fixed;
-  top: 0;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
   width: 100%;
-  z-index: 100;
-  background-color: var(--white-color);
 }
-.home .top-tab .tab-item.data-v-57280228 {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-          flex: 1;
-  color: #999;
-  border-bottom: 4rpx solid #ececec;
+.empty-wrap .img-box.data-v-5f48fce4 {
+  width: 200rpx;
+  height: 192rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
 }
-.home .top-tab .active.data-v-57280228 {
-  color: var(--main-color);
-  border-bottom: 4rpx solid var(--main-color);
+.empty-wrap .img-box .img.data-v-5f48fce4 {
+  width: 200rpx;
+  height: 164rpx;
+}
+.empty-wrap .empty-text.data-v-5f48fce4 {
+  text-align: center;
+  font-size: 24rpx;
+  color: #999999;
+  padding: 30rpx;
 }
 

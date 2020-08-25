@@ -70,7 +70,7 @@
 			...mapGetters({
 				sCardList: "cardList",
 				sRightList: "rightList",
-				token: "token"
+				isLogin: "isLogin"
 			})
 		},
 		onLoad() {
@@ -88,7 +88,7 @@
 				let index = e.index;
 					switch (index) {
 						case 0:
-							if(!this.token) {
+							if(!this.isLogin) {
 								this.setLoginTip(true);
 								return;
 							}

@@ -54,6 +54,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.common-disabled.data-v-dcbcfe34 {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 .info-wrap.data-v-dcbcfe34 {
   position: relative;
   margin-bottom: 100rpx;

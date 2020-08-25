@@ -59,7 +59,7 @@
 			...mapGetters(["currentPage"])
 		},
 		methods: {
-			...mapMutations(["setUserInfo", "setToken"]),
+			...mapMutations(["setUserInfo", "setToken", "setIsLogin"]),
 			// 聚焦密码框，加载动画
 			passwordF_B() {
 				this.hideEyes = !this.hideEyes;
@@ -181,17 +181,18 @@
 					success: infoRes => {
 						if (infoRes.errMsg === "getUserInfo:ok") {
 							this.setUserInfo(infoRes.userInfo);
-							console.log(infoRes.userInfo)
 							this.setToken("imtokenADASDASDQADASDsdsdd");
-							uni.redirectTo({
-								url: this.currentPage,
-								fail: () => {
-									// 跳转失败兼容到tabbar
-									uni.switchTab({
-											url: this.currentPage
-									})
-								}
-							})
+							this.setIsLogin(true);
+							uni.navigateBack()
+							// uni.redirectTo({
+							// 	url: this.currentPage,
+							// 	fail: () => {
+							// 		// 跳转失败兼容到tabbar
+							// 		uni.switchTab({
+							// 				url: this.currentPage
+							// 		})
+							// 	}
+							// })
 						}
 					}
 				});

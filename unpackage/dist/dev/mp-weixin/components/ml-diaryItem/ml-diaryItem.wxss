@@ -57,6 +57,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.common-disabled.data-v-ad61daf8 {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 .radius.data-v-ad61daf8 {
   border-radius: 16rpx;
 }

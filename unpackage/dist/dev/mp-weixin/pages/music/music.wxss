@@ -49,6 +49,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.common-disabled.data-v-dc03475c {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 .music-container.data-v-dc03475c {
   display: -webkit-box;
   display: -webkit-flex;

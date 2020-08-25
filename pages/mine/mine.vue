@@ -7,7 +7,7 @@
 				<view class="avatar-wrap">
 					<view class="avatar flex-center"><image :src="avatarUrl" mode="widthFix" class="img"></image></view>
 					<view class="cu-tag badge ycShake" :class="userInfo.gender == 0 ? 'cuIcon-female bg-pink' : 'cuIcon-male bg-blue'"></view>
-					<view v-if="userInfo" class="name">
+					<view v-if="isLogin" class="name">
 						<p>{{ userInfo.nickName }}</p>
 						<p class="motto">哪有人会是一张白纸啊，大家都是带着爱与恨、往事与阴影活着。有的人藏得深有的人藏不住而已</p>
 					</view>
@@ -16,7 +16,7 @@
 			</view>
 			<view class="top-menu">
 				<view class="menu-box flex-center" v-for="(item, index) in menuList" :key="index" @tap="handleMenu(index)">
-					<text class="title">{{ item.num }}</text>
+					<text class="title">{{ isLogin ? item.num : '*' }}</text>
 					<text>{{ item.name }}</text>
 				</view>
 			</view>
@@ -69,7 +69,7 @@ export default {
 		};
 	},
 	computed: {
-		...mapGetters(["userInfo"]),
+		...mapGetters(["userInfo", "isLogin"]),
 		avatarUrl() {
 			if (this.userInfo.avatarUrl) {
 				return this.userInfo.avatarUrl;

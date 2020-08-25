@@ -1,0 +1,1 @@
+<view class="empty-wrap data-v-5f48fce4" style="{{'height:'+(height+'px')+';'}}"><view class="img-box data-v-5f48fce4"><image class="img data-v-5f48fce4" src="/static/img/img_empty.png" mode="widthFix"></image></view><view class="empty-text _p data-v-5f48fce4">{{emptyText}}</view><slot></slot></view>

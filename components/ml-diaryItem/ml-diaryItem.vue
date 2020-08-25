@@ -57,7 +57,7 @@
 			};
 		},
 		computed: {
-			...mapGetters(["token"])
+			...mapGetters(["isLogin"])
 		},
 		methods: {
 			...mapMutations({
@@ -65,18 +65,13 @@
 			}),
 			// 去详情
 			diaryDetail(id) {
-				if (!this.token) {
-					this.setLoginTip(true);
-					return;
-				}
-				
 				uni.navigateTo({
-					url: "`pages/diary/detailid=${id}`"
+					url: `/pages/diary/detail?id=${id}`
 				})
 			},
 			// 点赞
 			handleLike() {
-				if (!this.token) {
+				if (!this.isLogin) {
 					this.setLoginTip(true);
 					return;
 				}

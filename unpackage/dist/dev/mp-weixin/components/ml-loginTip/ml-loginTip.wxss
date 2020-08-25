@@ -49,6 +49,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.common-disabled.data-v-23133c46 {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 .modal-box.data-v-23133c46 {
   width: 610rpx;
   border-radius: 20rpx;
