@@ -34,15 +34,21 @@
 				"path" : "pages/login/login",
 				"style" : {
 					"navigationBarTitleText": "登录"
-				}
+			}
 		},
 		{
 				"path" : "pages/publish/publish",
 				"style" : {
 					"navigationBarTitleText": "好想大声告诉你"
+			}
+		},
+		{
+				"path" : "pages/mine/other",
+				"style" : {
+					"navigationBarTitleText": "钟爱侬"
 				}
-		}
-  ],
+      }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

@@ -2,7 +2,7 @@
 	<view :class="['card-item', radius ? 'radius' : '']">
 		<view class="item-head">
 			<view class="ih-left">
-				<view class="img-avatar flex-center">
+				<view class="img-avatar flex-center" @tap="toOther(item)">
 					<image :src="item.avatarUrl" mode="widthFix" class="img"></image>
 				</view>
 				<view class="head-name">{{ item.nickName }}</view>
@@ -63,6 +63,18 @@
 			...mapMutations({
 				setLoginTip: "user/setLoginTip"
 			}),
+			toOther(item) {
+				let obj = {
+					avatarUrl: item.avatarUrl,
+					nickName: item.nickName,
+					gender: item.gender,
+				}
+				// 防止图片链接解析出错
+				let encodeData = encodeURIComponent(JSON.stringify(obj));
+				uni.navigateTo({
+					url: `/pages/mine/other?memberId=${item.memberId}&userInfo=${encodeData}`
+				})
+			},
 			// 去详情
 			diaryDetail(id) {
 				uni.navigateTo({

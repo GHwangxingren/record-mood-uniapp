@@ -11,11 +11,11 @@
 			<view
 				:class="[
 					'follow-btn flex-center', 
-					detail.followed ? 'followed' : ''
+					detail.follow ? 'followed' : ''
 				]" 
-				@tap="handleFllow(detail.id)"
+				@tap="handleFollow(detail.id)"
 			>
-				{{ !detail.followed ? "关注ta" : "取消关注" }}
+				{{ !detail.follow ? "关注ta" : "取消关注" }}
 			</view>
 		</view>
 		
@@ -144,13 +144,13 @@
 				setLoginTip: "user/setLoginTip"
 			}),
 			// 关注
-			handleFllow(id) {
+			handleFollow(id) {
 				if (!this.isLogin) {
 					this.setLoginTip(true);
 					return;
 				}
 				
-				this.detail.followed = !this.detail.followed;
+				this.detail.follow = !this.detail.follow;
 			},
 			// 发布评论
 			sendComment() {

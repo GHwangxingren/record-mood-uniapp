@@ -5,7 +5,8 @@
     "pages/mine/mine",
     "pages/diary/detail",
     "pages/login/login",
-    "pages/publish/publish"
+    "pages/publish/publish",
+    "pages/mine/other"
   ],
   "subPackages": [],
   "window": {
@@ -49,5 +50,5 @@
     "audio"
   ],
   "usingComponents": {},
-  "sitemapLocation": "sitemap62.json"
+  "sitemapLocation": "sitemap27.json"
 }

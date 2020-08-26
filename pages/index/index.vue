@@ -57,6 +57,7 @@
 					{
 						bgColor: '#37b59d',
 						text: '分享',
+						share: true,
 						fontSize: 28,
 						color: '#fff'
 					}
@@ -73,6 +74,13 @@
 				isLogin: "isLogin"
 			})
 		},
+		onShareAppMessage() {
+			return {
+				title: "享受生活，分享快乐",
+				path: "/pages/index/index",
+				imageUrl: "https://xing-picture.oss-cn-beijing.aliyuncs.com/share_bg.png"
+			}
+		},
 		onLoad() {
 			this.loadData('add');
 			this.rightList = this.sRightList;
@@ -82,7 +90,8 @@
 		},
 		methods: {
 			...mapMutations({
-				setLoginTip: "user/setLoginTip"
+				setLoginTip: "user/setLoginTip",
+				setCardList: "diary/setCardList"
 			}),
 			handleHoverBtn(e) {
 				let index = e.index;
@@ -115,12 +124,14 @@
 						this.cardList = this.cardList.concat({
 							id: 2,
 							time: '06-17',
+							gender: 0,
 							avatarUrl: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2771555881,3104139652&fm=26&gp=0.jpg',
-							nickName: '小不点',
+							nickName: '囚徒',
 							title: '如果一些事，没有过来，不必焦虑，过好现在的生活。何必因几年后，几月后或几天后的事而影响现在的心情。没那必要！',
 							follow: false,
 							isLike: false,
 							likeNum: '24',
+							memberId: 1003,
 							commentNum: '0',
 							imgList: [
 								{
@@ -128,6 +139,7 @@
 								}
 							]
 						});
+						this.setCardList(this.cardList);
 					} else {
 						this.cardList = this.sCardList;
 					}

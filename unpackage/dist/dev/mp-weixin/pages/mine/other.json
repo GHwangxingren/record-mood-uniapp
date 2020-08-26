@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "钟爱侬",
+  "usingComponents": {
+    "ml-my-info": "/components/ml-myInfo/ml-myInfo",
+    "ml-diary-item": "/components/ml-diaryItem/ml-diaryItem",
+    "ml-load-more": "/components/ml-loadMore/ml-loadMore"
+  }
+}
