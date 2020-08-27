@@ -15,10 +15,10 @@
 			<view class="login-form">
 				<form @submit="formSubmit">
 					<view class="form-input">
-						<input type="text" value="" placeholder="用户名" />
+						<input type="text" :value="userName" placeholder="用户名" />
 					</view>
 					<view class="form-input">
-						<input type="password" value="" placeholder="密码" @focus="passwordF_B" @blur="passwordF_B" />
+						<input type="password" :value="password" placeholder="密码" @focus="passwordF_B" @blur="passwordF_B" />
 					</view>
 					<button type="primary" form-type="submit">登录</button>
 				</form>
@@ -40,12 +40,15 @@
 </template>
 
 <script>
+	// import { isPhone } from "@/utils/common";
 	import { createNamespacedHelpers, mapGetters } from "vuex";
 	const { mapMutations } = createNamespacedHelpers("user");
 	
 	export default {
 		data() {
 			return {
+				password: "",
+				userName: "",
 				phone: "",
 				code: '',
 				key: '',
@@ -65,45 +68,54 @@
 				this.hideEyes = !this.hideEyes;
 			},
 			formSubmit(e) {
+				// 模拟假登录
+				if (this.userName === "user" && this.password === "123456" ) {
+					uni.showToast("登录成功");
+					this.setUserInfo(infoRes.userInfo);
+					this.setToken("imtokenADASDASDQADASDsdsdd");
+					this.setIsLogin(true);
+					uni.navigateBack();
+					setTimeout(() => {
+						uni.navigateBack();
+					}, 300);
+				} else {
+					uni.showToast("用户名或密码不正确");
+				}
 				console.log(e.detail.value);
 			},
 			Timer() {},
 			getCode() {
 				let _this = this;
 				uni.hideKeyboard()
-				if (_this.getCodeisWaiting) {
+				if (this.getCodeisWaiting) {
 					return;
 				}
-				if (!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(_this.phone))) {
+				if (!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(this.phone))) {
 					uni.showToast({
 						title: '请填写正确手机号码',
 						icon: "none"
 					});
 					return false;
 				}
-				_this.getCodeText = "发送中..."
-				_this.getCodeisWaiting = true;
-				_this.getCodeBtnColor = "rgba(255,255,255,0.5)"
+				this.getCodeText = "发送中..."
+				this.getCodeisWaiting = true;
+				this.getCodeBtnColor = "rgba(255,255,255,0.5)"
 
 				uni.request({
-					url: _this.websiteUrl + '/sms/notification-sms/codes',
+					url: "",
 					data: {
-						'phone': _this.phone
+						'phone': this.phone
 					},
 					method: 'POST',
 					header: {
 						'Content-Type': 'application/x-www-form-urlencoded',
 						//自定义请求头信息
 					},
-					success: (res) => {
-						_this.key = res.data.data.key;
-						//TODO 开发模式
-						_this.code = res.data.data.code;
-					}
+					success: (res) => {}
 				});
 				//示例用定时器模拟请求效果
 				setTimeout(() => {
-					//uni.showToast({title: '验证码已发送',icon:"none"});
+					uni.showToast({ title: '验证码已发送',icon:"none" });
 					_this.setTimer();
 				}, 1000)
 			},
@@ -122,40 +134,6 @@
 					this.getCodeText = "重新获取(" + holdTime + ")"
 					holdTime--;
 				}, 1000)
-			},
-			doLogin() {
-				uni.hideKeyboard()
-				//模板示例部分验证规则
-				// if(!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(this.phone))){ 
-				// 	uni.showToast({title: '请填写正确手机号码',icon:"none"});
-				// 	return false; 
-				// } 
-
-				uni.request({
-					url: this.websiteUrl + '/token/sys/login-sms',
-					data: {
-						'key': this.key,
-						'code': this.code,
-						'phone': this.phone
-					},
-					method: 'POST',
-					header: {
-						'Content-Type': 'application/x-www-form-urlencoded',
-					},
-					success: (res) => {
-						if (res.data.code == 200) {
-							this.login(true, res.data.data, function() {
-								this.getRongyToken();
-							});
-						} else {
-							uni.showToast({
-								title: '验证码不正确',
-								icon: "none"
-							});
-							return false;
-						}
-					}
-				});
 			},
 			//QQ登录
 			loginqq() {
@@ -199,7 +177,6 @@
 			},
 			//授权登录
 			otherLogin(loginRes, infoRes, type) {
-				let _this = this;
 				let url;
 				let pram = {};
 				// _this.loginRes=JSON.stringify(loginRes).toString();
@@ -232,21 +209,13 @@
 					default:
 				}
 				uni.request({
-					url: _this.websiteUrl + url,
+					url: "",
 					data: pram,
 					method: 'POST',
 					header: {
 						'Content-Type': 'application/x-www-form-urlencoded',
 					},
-					success: (res) => {
-						if (res.data.code == 200) {
-							//_this.testData=JSON.stringify(res.data.data).toString();;
-							_this.login(true, res.data.data, function() {
-								_this.getRongyToken();
-							});
-
-						}
-					}
+					success: (res) => {};
 				});
 			},
 		}

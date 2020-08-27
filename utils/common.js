@@ -52,8 +52,32 @@ Date.prototype.Format = function(fmt) {
 }
 // new Date(1542274800000).Format('yy-MM-dd hh:mm:ss'); //"2018-11-15 17:40:00"
 
+// 手机号验证
+const isPhone = function(phone) {
+	const pattern = /^1[3456789]\d{9}$/;
+
+	return pattern.test(phone)
+}
+
+
+// 拨打电话
+const makePhone = function() {
+	uni.makePhoneCall({
+		phoneNumber: "10086",
+		// 成功回调
+		success: (res) => {
+			console.log(res, "成功");
+		},
+		// 失败回调
+		fail: (res) => {
+			console.log(res, "失败");
+		}
+	});
+}
 
 export {
 	preview,
-	backToLogin
+	backToLogin,
+	makePhone,
+	isPhone
 }
