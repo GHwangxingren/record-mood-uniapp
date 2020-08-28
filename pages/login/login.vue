@@ -40,7 +40,7 @@
 </template>
 
 <script>
-	// import { isPhone } from "@/utils/common";
+	import { isPhone } from "@/utils/common";
 	import { createNamespacedHelpers, mapGetters } from "vuex";
 	const { mapMutations } = createNamespacedHelpers("user");
 	
@@ -91,12 +91,11 @@
 			},
 			Timer() {},
 			getCode() {
-				let _this = this;
 				uni.hideKeyboard()
 				if (this.getCodeisWaiting) {
 					return;
 				}
-				if (!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(this.phone))) {
+				if (!isPhone(this.phone)) {
 					uni.showToast({
 						title: '请填写正确手机号码',
 						icon: "none"
@@ -122,7 +121,7 @@
 				//示例用定时器模拟请求效果
 				setTimeout(() => {
 					uni.showToast({ title: '验证码已发送',icon:"none" });
-					_this.setTimer();
+					this.setTimer();
 				}, 1000)
 			},
 			setTimer() {
