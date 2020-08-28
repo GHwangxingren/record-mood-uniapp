@@ -4,7 +4,11 @@
 		<view class="mine-top">
 			<view class="avatar-wrap">
 				<view class="avatar flex-center"><image :src="avatarUrl" mode="widthFix" class="img"></image></view>
-				<view class="cu-tag badge ycShake" :class="userInfo.gender == 0 ? 'cuIcon-female bg-pink' : 'cuIcon-male bg-blue'"></view>
+				<view
+					v-if="userInfo.gender !== undefinde"
+					class="cu-tag badge ycShake"
+					:class="userInfo.gender == 0 ? 'cuIcon-female bg-pink' : 'cuIcon-male bg-blue'">
+				</view>
 				<view v-if="showLogin && !isLogin" class="login-text" @tap="goLogin">请登录</view>
 				<view v-else class="name">
 					<p>{{ userInfo.nickName }}</p>

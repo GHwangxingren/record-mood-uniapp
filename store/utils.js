@@ -4,7 +4,6 @@
  * @param {String} stateName 状态字段名
  */
 export const getMutionsKey = stateName => {
-  console.log(stateName);
   return `set${stateName[0].toUpperCase()}${stateName.substring(1)}`;
 };
 

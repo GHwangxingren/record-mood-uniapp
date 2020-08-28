@@ -12,7 +12,8 @@
 		</view>
 		<!-- 中间主体内容列表 -->
 		<ml-refresh ref="pullDownRefresh" @refresh="onPulldownReresh">
-			<view class="content-wrap">
+			<!-- <ml-skeleton v-if="skeletonShow" backgroundColor="#fafafa" borderRadius="10rpx"></ml-skeleton> -->
+			<view class="content-wrap ml-skeleton">
 				<view v-if="activeTab === 0">
 					<view class="margin-bottom" v-for="(item, index) in cardList" :key="item.id">
 						<ml-diaryItem :obj="item" />
@@ -38,6 +39,7 @@
 	export default {
 		data() {
 			return {
+				skeletonShow: true,
 				activeTab: 0,
 				tabList: [
 					{
@@ -155,7 +157,7 @@
 			//下拉刷新
 			onPulldownReresh() {
 				this.loadData('refresh');
-			},
+			}
 		}
 	}
 </script>

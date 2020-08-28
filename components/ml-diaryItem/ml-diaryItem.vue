@@ -2,38 +2,38 @@
 	<view :class="['card-item', radius ? 'radius' : '']">
 		<view class="item-head">
 			<view class="ih-left">
-				<view class="img-avatar flex-center" @tap="toOther(item)">
+				<view class="img-avatar flex-center ml-skeleton-circular" @tap="toOther(item)">
 					<image :src="item.avatarUrl" mode="widthFix" class="img"></image>
 				</view>
-				<view class="head-name">{{ item.nickName }}</view>
+				<view class="head-name ml-skeleton-rect">{{ item.nickName }}</view>
 			</view>
-			<view class="ih-time">{{ item.createTime }}</view>
+			<view class="ih-time ml-skeleton-rect">{{ item.createTime }}</view>
 		</view>
 		<view class="item-content" @tap="diaryDetail(item.id)">
 			<!-- 文字 -->
-			<view class="ic-title">{{ item.title }}</view>
+			<view class="ic-title ml-skeleton-rect">{{ item.title }}</view>
 			<!-- 图片 -->
 			<view class="ic-img-box">
 				<view v-if="item.imgList.length === 1" class="img-one">
 					<block v-for="(img, index) in item.imgList" :key="index">
-						<image class="img" :src="img.url" mode="widthFix" @tap.stop="previewImage(item.imgList, index)"></image>
+						<image class="img ml-skeleton-rect" :src="img.url" mode="widthFix" @tap.stop="previewImage(item.imgList, index)"></image>
 					</block>
 				</view>
 				<view v-if="item.imgList.length > 1" class="img-list">
 					<view class="img-box" v-for="(img, index) in item.imgList" :key="index">
-						<image class="img" :src="img.url" mode="aspectFill" @tap.stop="previewImage(item.imgList, index)"></image>
+						<image class="img ml-skeleton-fillet" :src="img.url" mode="aspectFill" @tap.stop="previewImage(item.imgList, index)"></image>
 					</view>
 				</view>
 			</view>
 			<!-- 按钮 -->
 			<view class="ic-button">
 				<view class="btn-item flex-center">
-					<image class="img" src="/static/img/diary/img_say.png" mode="widthFix"></image>
-					<text>{{ item.commentNum }}</text>
+					<image class="img ml-skeleton-rect" src="/static/img/diary/img_say.png" mode="widthFix"></image>
+					<text class="ml-skeleton-rect">{{ item.commentNum }}</text>
 				</view>
 				<view class="btn-item flex-center" @tap.stop="handleLike">
-					<image class="img" :src="!item.isLike ? '/static/img/diary/img_zan.png' : '/static/img/diary/img_zan_1.png'" mode="widthFix"></image>
-					<text>{{ item.likeNum }}</text>
+					<image class="img ml-skeleton-rect" :src="!item.isLike ? '/static/img/diary/img_zan.png' : '/static/img/diary/img_zan_1.png'" mode="widthFix"></image>
+					<text class="ml-skeleton-rect">{{ item.likeNum }}</text>
 				</view>
 			</view>
 		</view>

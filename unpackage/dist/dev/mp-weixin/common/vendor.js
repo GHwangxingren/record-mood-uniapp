@@ -66,7 +66,7 @@ var r=function(t){var e=Number(t.version.split(".")[0]);if(e>=2)t.mixin({beforeC
 /*!**************************************************!*\
   !*** D:/vue/uniDemo/mark-of-life/store/utils.js ***!
   \**************************************************/
-/*! no static exports found */function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.initMutations=e.getMutionsKey=void 0;var r=function(t){return console.log(t),"set".concat(t[0].toUpperCase()).concat(t.substring(1))};e.getMutionsKey=r;var o=function(t){var e={};return Object.keys(t).map((function(t){e[r(t)]=function(e,n){e[t]=n}})),e};e.initMutations=o},
+/*! no static exports found */function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.initMutations=e.getMutionsKey=void 0;var r=function(t){return"set".concat(t[0].toUpperCase()).concat(t.substring(1))};e.getMutionsKey=r;var o=function(t){var e={};return Object.keys(t).map((function(t){e[r(t)]=function(e,n){e[t]=n}})),e};e.initMutations=o},
 /*!***************************************************************!*\
   !*** D:/vue/uniDemo/mark-of-life/store/moudules/user/user.js ***!
   \***************************************************************/
