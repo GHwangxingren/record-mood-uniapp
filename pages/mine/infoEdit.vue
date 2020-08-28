@@ -23,7 +23,7 @@
 					<view class="uni-input text-grey">{{ birthday }}</view>
 				</picker>
 			</view>
-			<view class="cu-form-group margin-top"><textarea maxlength="30" @input="inputChange" placeholder="与君共勉"></textarea></view>
+			<view class="cu-form-group margin-top"><textarea maxlength="30" @input="inputChange" placeholder="留下点什么把..."></textarea></view>
 		</view>
 		<view class="bottom-btn flex-center">
 			<view class="btn">保存</view>
