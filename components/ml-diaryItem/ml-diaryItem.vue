@@ -21,7 +21,7 @@
 				</view>
 				<view v-if="item.imgList.length > 1" class="img-list">
 					<view class="img-box" v-for="(img, index) in item.imgList" :key="index">
-						<image class="img" :src="img.url" mode="widthFix" @tap.stop="previewImage(item.imgList, index)"></image>
+						<image class="img" :src="img.url" mode="aspectFill" @tap.stop="previewImage(item.imgList, index)"></image>
 					</view>
 				</view>
 			</view>

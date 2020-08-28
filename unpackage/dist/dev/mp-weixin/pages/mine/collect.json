@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "我的收藏",
+  "usingComponents": {
+    "ml-diary-item": "/components/ml-diaryItem/ml-diaryItem",
+    "ml-empty": "/components/ml-empty/ml-empty",
+    "ml-login-tip": "/components/ml-loginTip/ml-loginTip"
+  }
+}

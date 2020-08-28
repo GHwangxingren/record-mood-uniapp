@@ -23,7 +23,7 @@
 
 <script>
 	import { backToLogin } from "@/utils/common.js";
-	import { mapGetters } from "vuex";
+	import { mapMutations } from "vuex";
 	
 	export default {
 		props: {
@@ -68,8 +68,19 @@
 			}
 		},
 		methods: {
+			...mapMutations({
+				setLoginTip: "user/setLoginTip"
+			}),
 			goLogin() {
 				backToLogin();
+			},
+			handleMenu(index) {
+				if (!this.isLogin && this.showLogin) {
+					this.setLoginTip(true);
+					return;
+				}
+				
+				this.$emit("change", index);
 			}
 		}
 	}

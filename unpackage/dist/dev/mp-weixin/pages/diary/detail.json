@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "命印",
+  "navigationBarTitleText": "旧时光",
   "usingComponents": {
     "ml-empty": "/components/ml-empty/ml-empty",
     "ml-login-tip": "/components/ml-loginTip/ml-loginTip"

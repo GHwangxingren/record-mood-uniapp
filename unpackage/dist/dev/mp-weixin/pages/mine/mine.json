@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "我的",
   "usingComponents": {
-    "ml-my-info": "/components/ml-myInfo/ml-myInfo"
+    "ml-my-info": "/components/ml-myInfo/ml-myInfo",
+    "ml-login-tip": "/components/ml-loginTip/ml-loginTip"
   }
 }

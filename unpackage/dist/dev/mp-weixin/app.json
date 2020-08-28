@@ -6,7 +6,11 @@
     "pages/diary/detail",
     "pages/login/login",
     "pages/publish/publish",
-    "pages/mine/other"
+    "pages/mine/other",
+    "pages/mine/timeLine",
+    "pages/mine/infoEdit",
+    "pages/mine/collect",
+    "pages/mine/fans"
   ],
   "subPackages": [],
   "window": {
@@ -16,7 +20,7 @@
     "backgroundColor": "#F8F8F8"
   },
   "tabBar": {
-    "color": "#999999",
+    "color": "#999",
     "selectedColor": "#435257",
     "borderStyle": "white",
     "backgroundColor": "#ffffff",
@@ -49,6 +53,5 @@
   "requiredBackgroundModes": [
     "audio"
   ],
-  "usingComponents": {},
-  "sitemapLocation": "sitemap27.json"
+  "usingComponents": {}
 }

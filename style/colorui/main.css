@@ -3372,7 +3372,7 @@ scroll-view.cu-steps .cu-item {
 
 .line-cyan::after,
 .lines-cyan::after {
-	border-color: var(--activeColor);
+	border-color: var(--active-color);
 }
 
 .line-blue::after,
@@ -3446,7 +3446,7 @@ scroll-view.cu-steps .cu-item {
 }
 
 .bg-cyan {
-	background-color: var(--activeColor);
+	background-color: var(--active-color);
 	color: #ffffff;
 }
 

@@ -35,8 +35,37 @@
 	export default {
 		data() {
 			return {
-				
+				avatarUrl: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1610542142,718703573&fm=26&gp=0.jpg",
+				nickName: "小不点",
+				motto: "",
+				birthday: "1995-02-10",
+				sex: 1,
+				sexArr: ["女", "男"]
 			};
+		},
+		methods: {
+			inputChange(e) {
+				this.motto = e.detail.value;
+			},
+			bindDateChange(e) {
+				this.birthday = e.detail.value;
+			},
+			handleSex(e) {
+				this.sex = e.detail.value;
+			},
+			// 选择图片
+			ChooseImage() {
+				uni.chooseImage({
+					count: 1, //默认9
+					sizeType: ['original'], //可以指定是原图还是压缩图，默认二者都有
+					sourceType: ['album'], //从相册选择
+					success: (res) => {
+						if (res.tempFilePaths && res.tempFilePaths.length > 0) {
+							this.avatarUrl = res.tempFilePaths[0]
+						}
+					}
+				});
+			},
 		}
 	}
 </script>
@@ -57,7 +86,7 @@
 	.text-input {
 		text-align: right;
 	}
-
+	
 	.bottom-btn {
 		position: fixed;
 		bottom: 0;

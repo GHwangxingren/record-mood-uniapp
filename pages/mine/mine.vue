@@ -1,14 +1,14 @@
 <template>
 	<view class="mine-container">
 		<!-- 用户信息部分 -->
-		<ml-myInfo :user-info="userInfo" :is-login="isLogin" :show-login="true" />
+		<ml-myInfo :user-info="userInfo" :is-login="isLogin" :show-login="true" @change="handleMenu" />
 		<!-- 相关操作部分 -->
 		<view class="other-wrap">
-			<view class="cu-form-group mainColor" @tap="handleRoute("timeLine")">
-				<view class="title">碎碎念</view>
+			<view class="cu-form-group mainColor" @tap="handleRoute('timeLine')">
+				<view class="title">时光穿梭</view>
 				<text class="cuIcon-right"></text>
 			</view>
-			<view class="cu-form-group mainColor" @tap="handleRoute("infoEdit")">
+			<view class="cu-form-group mainColor" @tap="handleRoute('infoEdit')">
 				<view class="title">编辑资料</view>
 				<text class="cuIcon-right"></text>
 			</view>
@@ -23,12 +23,13 @@
 				<text class="cuIcon-right"></text>
 			</view>
 		</view>
+		<ml-loginTip />
 	</view>
 </template>
 
 <script>
-import { backToLogin, makePhone } from "@/utils/common.js";
-import { mapGetters } from "vuex";
+import { backToLogin, makePhone, preview } from "@/utils/common.js";
+import { mapGetters, mapMutations } from "vuex";
 
 export default {
 	data() {
@@ -54,16 +55,47 @@ export default {
 		...mapGetters(["userInfo", "isLogin"]),
 	},
 	methods: {
+		...mapMutations({
+			setLoginTip: "user/setLoginTip"
+		}),
 		goLogin() {
 			backToLogin();
 		},
 		handleRoute(path) {
+			if (!this.isLogin) {
+				this.setLoginTip(true);
+				return;
+			}
+			
 			uni.navigateTo({
 				url: `/pages/mine/${path}`
 			});
 		},
 		handleMoney() {
-			console.log("赞赏");
+			let img = ["https://xing-picture.oss-cn-beijing.aliyuncs.com/reword_code.jpg"];
+			
+			preview(img, 0).then(res => {
+				console.log(res)
+			});
+		},
+		handleMenu(index) {
+			switch (index) {
+				case 0:
+					uni.navigateTo({
+						url: "./collect"
+					});
+					break;
+				case 1:
+					uni.navigateTo({
+						url: './fans?type=' + 0
+					});
+					break;
+				case 2:
+					uni.navigateTo({
+						url: './fans?type=' + 1
+					});
+					break;
+			}
 		}
 	}
 };

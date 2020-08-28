@@ -1,4 +1,7 @@
 {
   "navigationBarTitleText": "好想大声告诉你",
-  "usingComponents": {}
+  "usingComponents": {
+    "ml-modal": "/components/ml-modal/ml-modal",
+    "ml-toast": "/components/ml-toast/ml-toast"
+  }
 }

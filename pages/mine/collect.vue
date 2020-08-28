@@ -8,6 +8,7 @@
 			<template v-else>
 				<ml-empty />
 			</template>
+			<ml-loginTip />
 	</view>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
 	<view class="other-container">
-		<ml-myInfo :user-info="userInfo" />
+		<ml-myInfo :user-info="userInfo" @change="handleMenu" />
 		<view class="diary-wrap">
 			<view class="scroll-wrapper">
 				<!-- 日记list -->
@@ -10,6 +10,7 @@
 				<ml-loadMore :status="loadMoreStatus" />
 			</view>
 		</view>
+		<ml-loginTip />
 	</view>
 </template>
 
@@ -33,6 +34,27 @@
 		computed: {
 			...mapGetters(["cardList"])
 		},
+		methods: {
+			handleMenu(index) {
+				switch (index) {
+					case 0:
+						uni.navigateTo({
+							url: "./collect"
+						});
+						break;
+					case 1:
+						uni.navigateTo({
+							url: './fans?type=' + 0
+						});
+						break;
+					case 2:
+						uni.navigateTo({
+							url: './fans?type=' + 1
+						});
+						break;
+				}
+			}
+		}
 	}
 </script>
 

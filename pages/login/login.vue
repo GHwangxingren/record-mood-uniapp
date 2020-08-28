@@ -15,10 +15,10 @@
 			<view class="login-form">
 				<form @submit="formSubmit">
 					<view class="form-input">
-						<input type="text" :value="userName" placeholder="用户名" />
+						<input type="text" v-model="userName" placeholder="用户名" />
 					</view>
 					<view class="form-input">
-						<input type="password" :value="password" placeholder="密码" @focus="passwordF_B" @blur="passwordF_B" />
+						<input type="password" v-model="password" placeholder="密码" @focus="passwordF_B" @blur="passwordF_B" />
 					</view>
 					<button type="primary" form-type="submit">登录</button>
 				</form>
@@ -69,9 +69,13 @@
 			},
 			formSubmit(e) {
 				// 模拟假登录
-				if (this.userName === "user" && this.password === "123456" ) {
+				if (this.userName == "user" && this.password == "123456" ) {
 					uni.showToast("登录成功");
-					this.setUserInfo(infoRes.userInfo);
+					this.setUserInfo({
+						nickName: "叽咕叽咕",
+						avatarUrl: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1610542142,718703573&fm=26&gp=0.jpg",
+						gender: 1
+					});
 					this.setToken("imtokenADASDASDQADASDsdsdd");
 					this.setIsLogin(true);
 					uni.navigateBack();
@@ -79,9 +83,11 @@
 						uni.navigateBack();
 					}, 300);
 				} else {
-					uni.showToast("用户名或密码不正确");
+					uni.showToast({
+						icon: "none",
+						title: "用户名或密码不正确"
+					});
 				}
-				console.log(e.detail.value);
 			},
 			Timer() {},
 			getCode() {
@@ -213,9 +219,9 @@
 					data: pram,
 					method: 'POST',
 					header: {
-						'Content-Type': 'application/x-www-form-urlencoded',
+						'Content-Type': 'application/x-www-form-urlencoded'
 					},
-					success: (res) => {};
+					success: (res) => {}
 				});
 			},
 		}

@@ -1,0 +1,65 @@
+
+.ml-toast.data-v-228e9bb8 {
+	background-color: rgba(0, 0, 0, 0.6);
+	border-radius: 10rpx;
+	position: fixed;
+	visibility: hidden;
+	opacity: 0;
+	left: 50%;
+	top: 48%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	-webkit-transition: 0.3s ease-in-out;
+	transition: 0.3s ease-in-out;
+	-webkit-transition-property: opacity, visibility;
+	transition-property: opacity, visibility;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	padding: 60rpx 20rpx 54rpx 20rpx;
+	box-sizing: border-box;
+}
+.ml-toast-padding.data-v-228e9bb8 {
+	padding-top: 50rpx !important;
+	padding-bottom: 50rpx !important;
+}
+.ml-unicon-padding.data-v-228e9bb8 {
+	padding: 24rpx 40rpx !important;
+	word-break: break-all;
+}
+.ml-toast-show.data-v-228e9bb8 {
+	visibility: visible;
+	opacity: 1;
+}
+.ml-toast-img.data-v-228e9bb8 {
+	width: 70rpx;
+	height: 70rpx;
+	display: block;
+	margin-bottom: 28rpx;
+}
+.ml-toast-text.data-v-228e9bb8 {
+	font-size: 30rpx;
+	line-height: 30rpx;
+	font-weight: 400;
+	color: #fff;
+	text-align: center;
+}
+.ml-unicon.data-v-228e9bb8 {
+	line-height: 40rpx !important;
+	font-size: 32rpx !important;
+}
+.ml-content-ptop.data-v-228e9bb8 {
+	padding-top: 10rpx;
+	font-size: 26rpx !important;
+}
+

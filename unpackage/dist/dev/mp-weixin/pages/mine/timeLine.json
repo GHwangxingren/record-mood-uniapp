@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "时间线",
+  "usingComponents": {
+    "ml-empty": "/components/ml-empty/ml-empty"
+  }
+}
