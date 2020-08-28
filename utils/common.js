@@ -75,9 +75,50 @@ const makePhone = function() {
 	});
 }
 
+/**
+ * 点击事件埋点
+ * @param {$url_path} 当前页面地址
+ * @param {button_content} 按钮内容文字
+ */
+const sensorClick = (content = "", page = "", event = "MPButtonClick") => {
+	let e = getCurrentPages();
+	// 获取当前页面的地址对象
+	let _curPath = e[e.length - 1] ? e[e.length - 1].route : "";
+	_curPath = page || _curPath;
+	this.sensors.track(event, {
+		$url_path: _curPath,
+		button_content: content
+	})
+}
+
+/**
+ * 小程序页面浏览埋点
+ * @param {$url_path} 当前页面地址
+ * @param {$referrer} 前向页面地址
+ */
+const sensorShow = (prev = "", page = "") => {
+	let e = getCurrentPath();
+	// 获取当前页面的前向地址的对象
+	let _prevPath = prev || getApp().globalData.sa_referrer;
+	// 获取当前页面的地址对象
+	let _curPath = `${e}${page}` || "";
+	this.sensors.track("MPViewPage", {
+		$url_path: _curPath,
+		$referrer: _prevPath,
+	})
+	getApp().globalData.sa_referrer = e
+}
+
+function prevPathFun() {
+	let e = getCurrentPath();
+	getApp().globalData.prevPath = e
+}
+
 export {
 	preview,
 	backToLogin,
 	makePhone,
-	isPhone
+	isPhone,
+	sensorShow,
+	sensorClick
 }

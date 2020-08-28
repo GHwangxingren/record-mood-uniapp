@@ -1,5 +1,8 @@
 <script>
 	export default {
+		globalData: {  
+				sa_referrer: "" // 设置全局属性，记录页面浏览前向地址  
+		},  
 		onLaunch: function() {
 			console.log('App Launch')
 		},
