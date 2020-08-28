@@ -6,14 +6,14 @@
 
 <img src="https://xing-picture.oss-cn-beijing.aliyuncs.com/intro4.jpg" width = "300" alt="图片名称" />
 
-![截图](https://xing-picture.oss-cn-beijing.aliyuncs.com/intro5.jpg)
+<img src="https://xing-picture.oss-cn-beijing.aliyuncs.com/intro5.jpg" width = "300" alt="图片名称" />
 
-![截图](https://xing-picture.oss-cn-beijing.aliyuncs.com/intro6.jpg)
+<img src="https://xing-picture.oss-cn-beijing.aliyuncs.com/intro6.jpg" width = "300" alt="图片名称" />
 
-![截图](https://xing-picture.oss-cn-beijing.aliyuncs.com/intro7.jpg)
+<img src="https://xing-picture.oss-cn-beijing.aliyuncs.com/intro7.jpg" width = "300" alt="图片名称" />
 
-![截图](https://xing-picture.oss-cn-beijing.aliyuncs.com/intro1.jpg)
+<img src="https://xing-picture.oss-cn-beijing.aliyuncs.com/intro1.jpg" width = "300" alt="图片名称" />
 
-![截图](https://xing-picture.oss-cn-beijing.aliyuncs.com/intro2.jpg)
+<img src="https://xing-picture.oss-cn-beijing.aliyuncs.com/intro2.jpg" width = "300" alt="图片名称" />
 
-![截图](https://xing-picture.oss-cn-beijing.aliyuncs.com/intro3.jpg)
+<img src="https://xing-picture.oss-cn-beijing.aliyuncs.com/intro3.jpg" width = "300" alt="图片名称" />
